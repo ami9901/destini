@@ -12,7 +12,7 @@ class Destini extends StatelessWidget {
   }
 }
 
-StoryBrain storyBrain=StoryBrain();
+StoryBrain storyBrain = StoryBrain();
 
 class StoryPage extends StatefulWidget {
   _StoryPageState createState() => _StoryPageState();
@@ -50,8 +50,10 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: FlatButton(
                   onPressed: () {
-                    //Choice 1 made by user.
-                    storyBrain.nextStory(1);
+                    setState(() {
+                      //Choice 1 made by user.
+                      storyBrain.nextStory(1);
+                    });
                   },
                   color: Colors.red,
                   child: Text(
@@ -71,8 +73,10 @@ class _StoryPageState extends State<StoryPage> {
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
                 child: FlatButton(
                   onPressed: () {
-                    //Choice 2 made by user.
-                    storyBrain.nextStory(2);
+                    setState(() {
+                      //Choice 2 made by user.
+                      storyBrain.nextStory(2);
+                    });
                   },
                   color: Colors.blue,
                   child: Text(
